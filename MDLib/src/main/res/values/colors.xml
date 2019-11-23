@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="backcolor_white">#FFFFFFFE</color>
+    <color name="red">#FF0000</color>
+    <color name="backs_blue">#6593CB</color>
+    <color name="title_bar">#2494f3</color>
+    <color name="no_check_textColor">#999999</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blank_view_color">#f9f9f9</color>
+    <color name="divider_color">#eeeeee</color>
+    <color name="hint_textColor">#999</color>
+    <color name="item_title_TextColor">#333333</color>
+    <color name="item_title_TextColor_light">#666666</color>
+    <color name="disabled_color">#cccccc</color>
+    <color name="stroke_color">#cacaca</color>
+    <color name="into_app_button_Text_stroke_color">#22aadd</color>
+    <!--患者资料中心下方添加报告按钮下方Layout的背景颜色-->
+    <color name="button_layout_background">#f7f9f8</color>
+    <color name="data_stroke_color">#e2e2e2</color>
+    <color name="glide_placeholder">#e6e4e4</color>
+    <color name="divider_color_e2e2e2">#e2e2e2</color>
+
+    <color name="item_viwe">#F7F7F7</color>
+    <color name="swipe_item_delete">#FF1400</color>
+    <color name="half_transparent_white">#B4FFFFFF</color>
+</resources>

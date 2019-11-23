@@ -1,0 +1,2 @@
+include ':app',':MDLib'
+rootProject.name='QuickDemo'

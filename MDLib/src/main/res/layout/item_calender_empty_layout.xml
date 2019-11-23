@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_weight_loss_patient_head_layout_Root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/weight_loss_footer_background"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <cn.plugin.core.widgets.EmptyLayout
+        android:id="@+id/EmptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:visibility="visible"
+        app:emptyString="暂无信息"
+        app:errorString="暂无信息"
+        app:icon="@mipmap/reservation_no_data"
+        app:weightString="1:1">
+    </cn.plugin.core.widgets.EmptyLayout>
+</RelativeLayout>

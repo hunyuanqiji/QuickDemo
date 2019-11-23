@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="@dimen/item_right_raw_paddingRight_Left"
+    android:paddingLeft="@dimen/item_right_raw_paddingRight_Left"
+    style="@style/item_click_background">
+    <TextView
+        android:id="@+id/setting_item_layout_TV_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textColor="@color/item_title_TextColor"
+        android:textSize="15sp"/>
+    <ToggleButton
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/selector_btn_toggle"
+        android:id="@+id/setting_item_layout_TB"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:checked="false"
+        android:textOn=""
+        android:textOff=""
+        android:text="" />
+    <ImageView
+        android:id="@+id/setting_item_layout_IV_raw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/right_raw"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/setting_item_layout_TV_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/setting_item_layout_IV_raw"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"/>
+</RelativeLayout>

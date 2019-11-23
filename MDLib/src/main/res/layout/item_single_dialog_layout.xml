@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_single_dialog_layout_Layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/item_right_raw_paddingRight_Left"
+    android:paddingRight="@dimen/item_right_raw_paddingRight_Left"
+    android:gravity="center_vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+    <TextView
+        android:id="@+id/item_single_dialog_layout_TV_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:text="男"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/item_title_TextColor"/>
+    <CheckBox
+        android:id="@+id/item_single_dialog_layout_TV_CB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/single_dialog_select_background"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"/>
+</LinearLayout>

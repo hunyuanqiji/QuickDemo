@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+apply plugin: 'auto-register'
+autoregister {
+    //添加这个是因为乐固加固后，arouter跳转失败的测试
+    registerInfo = [
+            [
+                    'scanInterface'           : 'com.alibaba.android.arouter.facade.template.IRouteRoot'
+                    , 'codeInsertToClassName' : 'com.alibaba.android.arouter.core.LogisticsCenter'
+                    , 'codeInsertToMethodName': 'loadRouterMap'//static方法
+                    , 'registerMethodName'    : 'registerRouteRoot' //static方法
+                    , 'include'               : ['com/alibaba/android/arouter/routes/.*']
+            ],
+            [
+                    'scanInterface'           : 'com.alibaba.android.arouter.facade.template.IInterceptorGroup'
+                    , 'codeInsertToClassName' : 'com.alibaba.android.arouter.core.LogisticsCenter'
+                    , 'codeInsertToMethodName': 'loadRouterMap'//static方法
+                    , 'registerMethodName'    : 'registerInterceptor' //static方法
+                    , 'include'               : ['com/alibaba/android/arouter/routes/.*']
+            ],
+            [
+                    'scanInterface'           : 'com.alibaba.android.arouter.facade.template.IProviderGroup'
+                    , 'codeInsertToClassName' : 'com.alibaba.android.arouter.core.LogisticsCenter'
+                    , 'codeInsertToMethodName': 'loadRouterMap'//static方法
+                    , 'registerMethodName'    : 'registerProvider' //static方法
+                    , 'include'               : ['com/alibaba/android/arouter/routes/.*']
+            ]
+    ]
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+configurations.all {
+    resolutionStrategy.force "com.android.support:support-v4:$rootProject.ext.supportVersion"
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "cn.demo.quickdemo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        manifestPlaceholders = [
+                app_label       : rootProject.ext.appLabel
+        ]
+        buildConfigField "String", "BASE_URL", '"https://apidevelop.mdruby.cn/"'
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a', "x86"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    //打包开始时，lint运行将有可能发生错误，当有异常发生时，此设置将忽略警告，继续运行脚本，若忽略，打包过程将被强行终止
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    //签名配置
+    signingConfigs {
+        release {//发布版本的签名配置
+            storeFile file('../keystore/doctor.jks')
+            keyAlias "kwys"
+            storePassword "kwys123"
+            keyPassword "kwys123"
+            v1SigningEnabled true
+            v2SigningEnabled false
+        }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+        }
+    }
+
+    //打包重命名算法，输出XXX_Android_v2.0_20160127_baidu.apk到脚本前配置的输出目录当中
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                outputFileName = "app-${variant.productFlavors[0].name}-${variant.buildType.name}-v${defaultConfig.versionName}-${releaseTime()}.apk"
+                /*File outputDirectory = new File(outputFile.parent)
+                if (variant.buildType.name == "release") {
+                    def fileName = "app名称_vn${defaultConfig.versionName}_vc${defaultConfig.versionCode}_release.apk"
+                    output.outputFile = new File(outputDirectory, fileName)
+                }*/
+            }
+        }
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':MDLib')
+
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+}

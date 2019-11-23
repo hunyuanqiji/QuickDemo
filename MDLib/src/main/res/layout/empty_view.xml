@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blank_view_color"
+    android:orientation="vertical">
+
+    <cn.plugin.core.widgets.EmptyLayout
+        android:id="@+id/EmptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:emptyString="@string/no_data"
+        app:errorString="@string/no_data"
+        app:icon="@drawable/empty_layout_icon" />
+</LinearLayout>

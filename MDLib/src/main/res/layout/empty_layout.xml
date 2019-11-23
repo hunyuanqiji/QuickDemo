@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <View
+        android:id="@+id/empty_layout_View_Top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <ImageView
+        android:id="@+id/empty_layout_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nodata_background"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/empty_layout_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        android:textColor="@color/hint_textColor"
+        android:textSize="@dimen/text_size_26px"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/empty_layout_TV_Error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Error"
+        android:textColor="@color/hint_textColor"
+        android:textSize="@dimen/text_size_26px"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+    <View
+        android:id="@+id/empty_layout_View_Bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1.4"/>
+</LinearLayout>

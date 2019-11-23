@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:src="@drawable/ic_search_no_hospital" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="未查询到结果~"
+        android:textColor="#999999"
+        android:textSize="13sp"
+        android:layout_marginTop="9dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您可点击下方按钮,
+        搜索框中的内容会成为您的自定义医院名称。"
+        android:textColor="#999999"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="38dp"/>
+
+
+    <Button
+        android:id="@+id/btn_commit"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="38dp"
+        android:background="@drawable/login_button"
+        android:text="提交我的医院"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</LinearLayout>
