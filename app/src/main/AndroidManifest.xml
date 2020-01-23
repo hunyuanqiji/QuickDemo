@@ -40,13 +40,9 @@
         </provider>
 
         <activity
-            android:name=".ui.main.MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="主页"
-            android:launchMode="singleTask"
+            android:name=".ui.main.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/MainTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden">
+            android:theme="@style/SplashTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,5 +50,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.account.LogingActivity"
+            android:label="登陆"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:label="注册"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="主页"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
     </application>
 </manifest>

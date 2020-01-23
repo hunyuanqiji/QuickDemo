@@ -8,4 +8,9 @@ package cn.plugin.core.utils;
 public class BaseConfigString {
 
     public static final int INSTALL_PERMISSOION_REQUEST_CODE = 8;
+
+    /**
+     * 医生信息的preferences的key
+     */
+    public static final String USER_INFO_KEY = "APP_USER_INFO";
 }

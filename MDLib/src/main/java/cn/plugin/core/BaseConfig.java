@@ -10,4 +10,6 @@ public class BaseConfig {
      */
     public static String BASE_URL = "";
     public static String VERSION_NAME = "";
+    public static String SIGN_IN_URL = "";
+    public static String PLAT_FROM_KEY = "";
 }

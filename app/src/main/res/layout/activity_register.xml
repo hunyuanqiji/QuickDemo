@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@mipmap/ic_register_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="38dp"
+        android:text="康维医生用户注册"
+        android:textColor="#333333"
+        android:textSize="23sp" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="38dp"
+        android:background="@null"
+        android:hint="手机号"
+        android:inputType="phone"
+        android:textColor="#333333"
+        android:textColorHint="#cccccc"
+        android:textSize="15sp"
+        android:maxEms="11"
+        android:imeOptions="actionNext"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="#E7E7E7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="38dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_verification_code"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="验证码"
+            android:inputType="number"
+            android:textColor="#333333"
+            android:textColorHint="#cccccc"
+            android:textSize="15sp"
+            android:imeOptions="actionNext"/>
+
+        <TextView
+            android:id="@+id/tv_verification_code"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="获取验证码"
+            android:gravity="center"
+            android:minEms="5"
+            android:textColor="@color/title_bar"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="#E7E7E7" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="38dp"
+        android:background="@null"
+        android:hint="设置密码（6-10位数字与字母的组合）"
+        android:inputType="textPassword"
+        android:textColor="#333333"
+        android:textColorHint="#cccccc"
+        android:textSize="15sp"
+        android:imeOptions="actionNext"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="#E7E7E7" />
+
+    <EditText
+        android:id="@+id/et_password_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="38dp"
+        android:background="@null"
+        android:hint="请再次输入密码"
+        android:inputType="textPassword"
+        android:textColor="#333333"
+        android:textColorHint="#cccccc"
+        android:textSize="15sp"
+        android:imeOptions="actionDone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="#E7E7E7" />
+
+
+    <Button
+        android:id="@+id/btn_register"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="38dp"
+        android:background="@drawable/login_button"
+        android:text="立即注册"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="38dp">
+
+        <CheckBox
+            android:id="@+id/cb_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableLeft="@drawable/checkbox_background"
+            android:drawablePadding="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="您已阅读并同意"
+            android:textColor="@color/item_title_TextColor_light"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_user_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_bar"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="和"
+            android:textColor="@color/item_title_TextColor_light"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_secret_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_bar"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

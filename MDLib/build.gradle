@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
-
+apply plugin: 'com.github.dcendents.android-maven' // 插件
+group='com.github.hunyuanqiji'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {

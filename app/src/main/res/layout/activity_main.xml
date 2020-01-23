@@ -12,15 +12,23 @@
         app:showComeBack="false"
         app:title="主界面"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="主界面"/>
 
-    <Button
-        android:id="@+id/btn"
+
+    <FrameLayout
+        android:id="@+id/main_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="webview"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_1.8_height"
+        android:background="@color/divider_color" />
+
+    <me.majiajie.pagerbottomtabstrip.PageNavigationView
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent" />
 </LinearLayout>

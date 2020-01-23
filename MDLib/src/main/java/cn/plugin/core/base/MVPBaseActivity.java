@@ -2,6 +2,7 @@ package cn.plugin.core.base;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,11 +25,13 @@ import cn.plugin.core.listener.PermissionsResultListener;
 import cn.plugin.core.utils.ABAppUtil;
 import cn.plugin.core.utils.AppManager;
 import cn.plugin.core.utils.AuthorityUnit;
+import cn.plugin.core.utils.BaseConfigString;
 import cn.plugin.core.widgets.CustomLoadingDialog;
+import cn.plugin.core.widgets.TipsDialog;
 
 /**
  * Activity的基类 新
- * Created by 宁家琦 on 2017/1/10.
+ * Created by yy on 2017/1/10.
  */
 public abstract class MVPBaseActivity<V extends MVPView, P extends BasePresenter<V>> extends AppCompatActivity
         implements ViewListener, MVPView, OnRefreshListener, OnLoadmoreListener {
@@ -47,7 +50,8 @@ public abstract class MVPBaseActivity<V extends MVPView, P extends BasePresenter
     protected int mRequestCode;
     protected int page = 1;
     protected int pageSize = 15;
-
+    protected SharedPreferences preferences;
+    protected TipsDialog mTipsDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +108,7 @@ public abstract class MVPBaseActivity<V extends MVPView, P extends BasePresenter
     protected abstract P createPresenter();
 
     public void initBeforData(Bundle savedInstanceState) {
+        preferences = mContext.getSharedPreferences(BaseConfigString.USER_INFO_KEY, mContext.MODE_PRIVATE);
     }
 
     @Override

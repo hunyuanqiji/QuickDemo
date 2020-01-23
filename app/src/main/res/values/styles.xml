@@ -5,5 +5,12 @@
         <item name="colorPrimary">@color/title_bar</item>
         <item name="colorPrimaryDark">@color/title_bar</item>
     </style>
-
+    <!-- 防止欢迎页白屏或者黑屏，设置图片 -->
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:windowIsTranslucent">false</item>-->
+        <!--<item name="android:windowDisablePreview">true</item>-->
+    </style>
 </resources>
